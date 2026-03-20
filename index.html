@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Vertex GPA | Universal 3D Calc</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="network-wrap"></div>
+
+    <div id="popup-overlay" class="overlay">
+        <div class="popup-card 3d-effect">
+            <h2 id="popup-title">EXCELLENT!</h2>
+            <p id="popup-msg">SGPA Calculated Successfully.</p>
+            <button onclick="closePopup()" class="btn-success shadow-btn">Edit / Continue</button>
+        </div>
+    </div>
+
+    <div class="main-wrapper">
+        <header>
+            <div class="logo">VERTEX<span>GPA</span></div>
+        </header>
+
+        <div class="app-grid">
+            <section id="sgpa-container" class="sem-column">
+                <div class="sem-card neumorphic" id="sem-1">
+                    <div class="sem-header"><h3>SEMESTER 1</h3></div>
+                    <div class="row-header">
+                        <div>Subject</div>
+                        <div>Credits</div>
+                        <div>Marks</div>
+                        <div></div>
+                    </div>
+                    <div class="subject-list" id="list-1">
+                        <div class="input-row">
+                            <input type="text" placeholder="SUBJECT" class="sub-name">
+                            <input type="text" placeholder="0" class="sub-credits">
+                            <input type="text" placeholder="0-100" class="sub-marks">
+                            <div class="row-action-spacer"></div>
+                        </div>
+                    </div>
+                    <div class="sem-actions">
+                        <button onclick="addSubject(1)" class="btn-outline">Add Subject</button>
+                        <button onclick="calculateSGPA(1)" class="btn-success shadow-btn">Calculate SGPA</button>
+                        <button onclick="addNewSemester()" class="btn-primary shadow-btn">Add Next Sem</button>
+                    </div>
+                    <div id="error-1" class="error-msg"></div>
+                    <div class="result-display">SGPA: <span id="sgpa-val-1">0.00</span></div>
+                </div>
+            </section>
+
+            <aside class="summary-column">
+                <div class="cgpa-box neumorphic">
+                    <h2>CGPA SUMMARY</h2>
+                    <div class="cgpa-display"><span id="total-cgpa">0.00</span></div>
+                    <div class="cgpa-actions">
+                        <button onclick="calculateTotalCGPA()" class="btn-primary shadow-btn">Refresh CGPA</button>
+                        <button onclick="clearAllData()" class="btn-clear-theme shadow-btn">Clear All Data</button>
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
